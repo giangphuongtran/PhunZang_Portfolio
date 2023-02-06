@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>🛸 Don't you wonder whether tomorrow will rain or not?</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+  </head>
+
+  <body>
+    <div class="grid">
+
+      <div class="box">
+
+        <p>Let's dig into today's weather</p>
+
+        <form action="{{url_for('predict')}}" method="post">
+          <input type="text" name="Location" placeholder="Location" required="required" />
+          <input type="number" step= any name="Min Tempurature" placeholder="Min Tempurature" required="required">
+          <input type="number" step= any name="Max Tempurature" placeholder="Max Tempurature" required="required">
+          <input type="number" step= any name="Rainfall" placeholder="Rainfall" required="required">
+          <input type="text" name="Wind Direction" placeholder="Wind Direction" required="required">
+          <input type="number" step= any name="Wind Speed" placeholder="Wind Speed" required="required">
+          <input type="text" name="Wind Direction at 9 AM" placeholder="Wind Direction at 9 AM" required="required">
+          <input type="text" name="Wind Direction at 3 PM" placeholder="Wind Direction at 3 PM" required="required">
+          <input type="number" step= any name="Wind Speed at 9 AM" placeholder="Wind Speed at 9 AM" required="required">
+          <input type="number" step= any name="Wind Speed at 3 PM" placeholder="Wind Speed at 3 PM" required="required">
+          <input type="number" step= any name="Humidity at 9 AM" placeholder="Humidity at 9 AM" required="required">
+          <input type="number" step= any name="Humidity at 3 PM" placeholder="Humidity at 3 PM" required="required">
+          <input type="number" step= any name="Pressure at 9 AM" placeholder="Pressure at 9 AM" required="required">
+          <input type="number" step= any name="Pressure at 3 PM" placeholder="Pressure at 3 PM" required="required">
+          <input type="number" step= any name="Tempurature at 9 AM" placeholder="Tempurature at 9 AM" required="required">
+          <input type="number" step= any name="Tempurature at 3 PM" placeholder="Tempurature at 3 PM" required="required">
+          <input type="text" name="Rain Today" placeholder="Rain Today" required="required">
+          <button type="submit" class="btn">Hmm, tomorrow will be?</button>
+        </form>
+
+        <p>{{ prediction_text }}</p>
+
+      </div>
+
+    </div>
+
+  </body>
+</html>
